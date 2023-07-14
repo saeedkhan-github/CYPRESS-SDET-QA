@@ -13,12 +13,12 @@ describe('Test Honor Point the patient channel', () => {
     it('Give Honor point in the patient chat', () => {
       
   
-      // Open any top patient channel 
+      // Open patient channel 
       patientdrawer.OpenPatientChannel('Test File')
       cy.wait(2000);
-      // send file in the chat 
-      uploading.sendFile('img.png');
-
+      // attach file in the chat 
+      uploading.sendMultipleFile();//  arugments is optional 
+      // Send file in the chat
       cy.get('.tiny > .ui').click();
     
     });
