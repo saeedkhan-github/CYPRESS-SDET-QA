@@ -21,6 +21,7 @@
     "chai-dom": "^1.11.0",
     "cypress": "^12.14.0",
     "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-xpath": "^2.0.1"
   },
   "description": ""

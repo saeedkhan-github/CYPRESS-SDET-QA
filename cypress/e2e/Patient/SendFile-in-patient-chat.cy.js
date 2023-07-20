@@ -5,12 +5,12 @@ import { uploads } from "../PageObject/uploads.js";
 let patientdrawer = new PatientDrawer;
 let uploading = new uploads;
 
-describe('Test Honor Point the patient channel', () => {
+describe('Send file in the Chat', () => {
     beforeEach(() => {
       Login();
     });
   
-    it('Give Honor point in the patient chat', () => {
+    it('Open patient channel and send file/multiple files in the patient chat', () => {
       
   
       // Open patient channel 
