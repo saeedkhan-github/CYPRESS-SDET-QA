@@ -13,7 +13,7 @@ export class PatientDrawer{
       
     }
     PatientProfileClick(){
-        cy.get(':nth-child(8) > .channel_list_item').click();
+        cy.get('.angle.down.icon').click();
     }
 
 }
