@@ -1,4 +1,4 @@
-import { Login } from "../Login.cy";
+import { Login } from "../Login";
 import { PatientDrawer } from "../PageObject/PatientDrawer";
 import { faker } from '@faker-js/faker';
 

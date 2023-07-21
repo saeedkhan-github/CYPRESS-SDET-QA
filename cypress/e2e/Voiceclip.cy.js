@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import { Login } from "./Login.cy";
+import { Login } from "./Login";
 
 describe('Test VoiceClip in the patient channel', () => {
     it('Sending Voice clip in the patient channel', () => {
