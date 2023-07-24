@@ -5,7 +5,7 @@ import chaiDom from 'chai-dom';
 chai.use(chaiDom);
 
 // import { contains } from "cypress/types/jquery";
-import { Login } from "./Login.cy";
+import { Login } from "./Login";
 import { should } from 'chai';
      
 var firstname ="John";
