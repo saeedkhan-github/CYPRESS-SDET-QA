@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "report:merge": "marge cypress/reports/mocha/*.json",
+    "test-dashboard":"npx cypress run --record --key 272007a3-67aa-42bc-b551-7bf7f09d0d76"
   },
   "keywords": [],
   "author": "zoha",
@@ -21,7 +23,6 @@
     "chai-dom": "^1.11.0",
     "cypress": "^12.14.0",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-xpath": "^2.0.1"
   },
   "description": ""

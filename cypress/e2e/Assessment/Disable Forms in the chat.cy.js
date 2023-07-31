@@ -6,8 +6,8 @@ beforeEach(function() {
     cy.wait(3000);
     
   });
-  describe('My First Test', () => {
-    it('click on alert',()=>{
+  describe('Test Assessment Form disabled', () => {
+    it('Click on the diabled assessment form in the chat ',()=>{
        
         // search for the Disabled forms patient channel 
         cy.get('.search-input > .ui > input').click();

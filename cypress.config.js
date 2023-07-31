@@ -1,6 +1,10 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  "env":{
+    
+  },
+  projectId: 'gdhvo4',
   chromeWebSecurity: false,
   report: 'mochawesome',
   reportOptions: {
@@ -12,6 +16,7 @@ module.exports = defineConfig({
   },
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
+    projectId:"gdhvo4",
     reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
       charts: true,

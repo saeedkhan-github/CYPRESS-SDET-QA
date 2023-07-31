@@ -1,8 +1,8 @@
-import "../Login.cy"
+
 import { Login } from "../Login"
 
-describe('My First Test', () => {
-    it('click on alert',()=>{
+describe('Test Assessment Form', () => {
+    it('Send assessment form in chat click the form add score and save the form',()=>{
        Login('joy','Zoha@123')
         // cy.get('.fluid > input').type('joy');
        

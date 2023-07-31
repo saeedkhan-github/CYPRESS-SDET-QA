@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import { Login } from "../Login/Login.cy";
+import { Login } from "../Login";
 
     describe('bookmark', () => {
     it('Bookmark a message', () => {
