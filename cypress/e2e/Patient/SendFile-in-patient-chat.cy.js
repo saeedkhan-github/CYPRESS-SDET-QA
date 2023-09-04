@@ -1,5 +1,5 @@
 
-import { Login } from "../Login.cy";
+import { Login } from "../Login.js";
 import { PatientDrawer } from "../PageObject/PatientDrawer.js";
 import { uploads } from "../PageObject/uploads.js";
 let patientdrawer = new PatientDrawer;
@@ -19,6 +19,7 @@ describe('Send file in the Chat', () => {
       // attach file in the chat 
       uploading.sendMultipleFile();//  arugments is optional 
       // Send file in the chat
+      cy.wait(5000);
       cy.get('.tiny > .ui').click();
     
     });
