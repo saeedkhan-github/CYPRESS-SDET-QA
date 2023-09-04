@@ -22,6 +22,7 @@ function Login(name,password){
     cy.get('.pincode-input-text:nth-child(3)').type('1');
     cy.get('.pincode-input-text:nth-child(4)').type('1');
     cy.wait(5000);
+    cy.get('.close-toastr').click();
 }
 
 export{Login}
