@@ -14,5 +14,8 @@ export class PatientDrawer{
     PatientProfileClick(){
         cy.get(':nth-child(8) > .channel_list_item').click();
     }
+    ChannelMenu(text) {
+        cy.get('.channel-menu').contains(text).click();
+    }
 
 }
