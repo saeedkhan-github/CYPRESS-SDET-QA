@@ -13,12 +13,14 @@ describe('Patient Notes', () => {
         patientdrawer.OpenPatientChannel('John Dav');
         
         cy.wait(2000);
-        patientdrawer.ClickPatientDrawer();
-        patientdrawer.PatientProfileClick();
+    
+        patientdrawer.ClickPatientDrawer();         // Open Patient Channel Menu.
+        patientdrawer.ChannelMenu('Patient Profile');   // Open Patient Profile in the List. 
+        
         // cy.get("textarea[placeholder='Create Notes']").should('have.text','');
         cy.get('.pencil').click();
         cy.get("textarea[placeholder='Create Notes']").click().clear().then(($el)=>{
-            cy.wrap($el).should('be.empty').type(faker.lorem.words(4));
+            cy.wrap($el).should('not.be.empty').type(faker.lorem.words(4));
         })
         cy.get('.status-button > :nth-child(2) > .ui').click();
         //verify success message 
