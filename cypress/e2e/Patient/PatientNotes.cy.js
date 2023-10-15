@@ -20,7 +20,7 @@ describe('Patient Notes', () => {
         // cy.get("textarea[placeholder='Create Notes']").should('have.text','');
         cy.get('.pencil').click();
         cy.get("textarea[placeholder='Create Notes']").click().clear().then(($el)=>{
-            cy.wrap($el).should('not.be.empty').type(faker.lorem.words(4));
+            cy.wrap($el).should('be.empty').type(faker.lorem.words(4));
         })
         cy.get('.status-button > :nth-child(2) > .ui').click();
         //verify success message 
