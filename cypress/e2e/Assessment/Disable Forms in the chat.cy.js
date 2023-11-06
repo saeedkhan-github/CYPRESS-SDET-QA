@@ -1,8 +1,8 @@
 
-import { Login } from "../Login.cy";
+import { Login } from "../Login";
 beforeEach(function() {
 
-    Login('joy','Zoha@123');
+    Login();
     cy.wait(3000);
     
   });
@@ -11,7 +11,7 @@ beforeEach(function() {
        
         // search for the Disabled forms patient channel 
         cy.get('.search-input > .ui > input').click();
-        cy.get('.search-input > .ui > input').type('Disabled Forms');
+        cy.get('.search-input > .ui > input').type('Carlee Schiller');
         cy.get('.patient-info').click();
         cy.wait(2000);
       // click on the last form PHQ9 already exist in the chat 

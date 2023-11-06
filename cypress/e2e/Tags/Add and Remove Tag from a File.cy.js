@@ -1,6 +1,6 @@
 
 import { Login } from "../Login";
-import { PatientDrawer } from "../PageObject/PatientDrawer.js";
+import { PatientDrawer } from "../PageObject/PatientDrawer";
 import { uploads } from "../PageObject/uploads.js";
 let patientdrawer = new PatientDrawer;
 let uploading = new uploads;

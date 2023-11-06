@@ -13,8 +13,10 @@ describe('Patient Notes', () => {
         patientdrawer.OpenPatientChannel('John Dav');
         
         cy.wait(2000);
-        patientdrawer.ClickPatientDrawer();
-        patientdrawer.PatientProfileClick();
+    
+        patientdrawer.ClickPatientDrawer();         // Open Patient Channel Menu.
+        patientdrawer.ChannelMenu('Patient Profile');   // Open Patient Profile in the List. 
+        
         // cy.get("textarea[placeholder='Create Notes']").should('have.text','');
         cy.get('.pencil').click();
         cy.get("textarea[placeholder='Create Notes']").click().clear().then(($el)=>{

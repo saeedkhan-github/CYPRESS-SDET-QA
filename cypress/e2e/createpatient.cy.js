@@ -24,7 +24,7 @@ describe('Test Create Patient Flow', () => {
        month = String(birthdate.getMonth()+1).padStart(2, '0');
        PatientDate = `${month}/${String(birthdate.getDate()).padStart(2,'0')}/${birthdate.getFullYear()}`;
        sex =faker.person.sex();
-       Phone= faker.phone.number('773#######');
+       Phone= faker.phone.number('301#######');
     Login("omar","Zoha@123");
       cy.wait(5000);
       
@@ -78,7 +78,7 @@ describe('Test Create Patient Flow', () => {
                   cy.wait("@apiRequest").then((interception) => {
                   const response = interception.response;
                   expect(response.statusCode).to.eq(201);
-                  expect(response.body.data.mobile_phone).to.eq('+1'+Phone);
+                  expect(response.body.data.mobile_phone).to.eq('+92'+Phone);
                   // cy.log('printing '+Phone);
                   // cy.log(response.body.data.mobile_phone);
                });
