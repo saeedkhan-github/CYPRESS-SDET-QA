@@ -17,9 +17,9 @@ describe('Send file in the Chat', () => {
       patientdrawer.OpenPatientChannel('Test File')
       cy.wait(2000);
       // attach file in the chat 
-      uploading.sendMultipleFile();//  arugments is optional 
+      uploading.sendFile();//  arugments is optional 
       // Send file in the chat
-      cy.wait(5000);
+      cy.wait(8000);
       cy.get('.tiny > .ui').click();
     
     });

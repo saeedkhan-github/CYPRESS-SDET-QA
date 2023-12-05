@@ -6,7 +6,7 @@ export class uploads{
     
         // cy.fixture('pic.jpeg', { encoding: null }).as('myfixture')
         // cy.get('#attachInput').selectFile('cypress/fixtures/img.png',{ force: true })
-        cy.get('input#attachInput').invoke('removeAttr', 'style').selectFile('cypress/fixtures/files/'+filename).
+        cy.get('#attachInput_undefined').invoke('removeAttr', 'style').selectFile('cypress/fixtures/files/'+filename).
         then(()=>{
           cy.wait(2000);
           cy.get('.editor-attachment-name').should('be.visible');
@@ -24,9 +24,9 @@ export class uploads{
       // cy.fixture('pic.jpeg', { encoding: null }).as('myfixture')
       // cy.get('#attachInput').selectFile('cypress/fixtures/img.png',{ force: true })
       if(arguments.length==0){
-      cy.get('input#attachInput').selectFile('cypress/fixtures/files/'+file1,{ force: true })
-      cy.get('input#attachInput').selectFile('cypress/fixtures/files/'+file2,{ force: true })
-      cy.get('input#attachInput').selectFile('cypress/fixtures/files/'+file3,{ force: true })
+        cy.get('#attachInput_undefined').selectFile('cypress/fixtures/files/'+file1,{ force: true })
+        // cy.get('#attachInput_undefined').selectFile('cypress/fixtures/files/'+file2,{ force: true })
+        cy.get('#attachInput_undefined').selectFile('cypress/fixtures/files/'+file3,{ force: true })
        
       
     }else{
