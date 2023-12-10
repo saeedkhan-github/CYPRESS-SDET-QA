@@ -8,26 +8,30 @@ let rightdrawer= new Rightdrawer;
 describe('Test for user Listing in Partner Location', () => {
     it('Show parnter users in top listing', () => {
         cy.visit('https://webapp.hucu.us/login');
+        // cy.visit('https://webapp.hucu.ai/login'); // prod
         Login('sk.user');
-        cy.wait(3000);
+        // Login('saeed.khan',"Hania@1519")
+        cy.wait(5000);
 
-        // cy.get('.angle.right.large.icon').click();
-        // cy.get("input[placeholder='Search']").click().type('haripur');
+    
         rightdrawer.Location('haripur');
+        // rightdrawer.Location("St. Mary's Hospital"); // pointing to prod
+        
         cy.get('.location-info-bold.ellipsis-text-wrapper').should('contain','haripur').click();
+        // cy.get('.location-info-bold.ellipsis-text-wrapper').should('contain',"St. Mary's Hospital").click();  // prod
         cy.wait(3000);
         cy.get('.channel-container.patient-container').first().click();
         patientdrawer.PatientProfileClick();
         patientdrawer.ChannelMenu('Add Collaborators');
 
-       
-        cy.get('.list_header_title').then($list=>{
-            if(cy.wrap($list[0].invoke('text')).should('have.text','invited')){
-                console.log($list[0].textContent);
-                
-            }
+       cy.wait(3000);
+        // cy.get('.list_header_title').eq(0).should('be.visible').should('contain','haripur-Current Location');
+        cy.get('.relaxed > :nth-child(1) > .list_header_title').then($el=>{
+            // console.log($el);
+            expect($el.text()).to.include('haripur - Current Location')
+            // expect($el.text()).to.include("St. Mary's Healt") // prod
         })
-
+        // .should('exist').should('contain','haripur-Current Location',{ timeout: 5000 });
     })   
         
   })
