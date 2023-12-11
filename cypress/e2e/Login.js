@@ -4,7 +4,7 @@ const user={
 }
 function Login(name,password){
 
-    // cy.visit('https://webapp.hucu.us/login');
+    cy.visit('https://webapp.hucu.us/login');
     cy.get('.fluid > input').click();
     cy.get('.fluid > input').type(name!=null?name:user.username);
     cy.get('.large').click();
