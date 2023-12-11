@@ -8,7 +8,7 @@ export class PatientDrawer {
         cy.get('.search-input > .ui > input').type(patient);
         cy.get('.patient-info').click();
         // send a message in the chat
-        cy.get("#messageInput").click();
+        // cy.get("#messageInput").click();
 
 
     }
@@ -17,6 +17,10 @@ export class PatientDrawer {
     }
     ChannelMenu(text) {
         cy.get('.channel-menu').contains(text).click();
+    }
+    Location(loc){
+        cy.get('.angle.right.large.icon').click();
+        cy.get("input[placeholder='Search']").click().type(loc);
     }
 
 }
