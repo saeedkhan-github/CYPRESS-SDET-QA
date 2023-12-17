@@ -13,7 +13,7 @@ function Login(name,password){
     cy.get('.icon > input').type(password!=null?password:user.password);
     cy.get('.large').click();
     cy.get('form').submit();
-    cy.get('.pincode-input-text:nth-child(1)').type('1');
+    cy.get('.pincode-input-text:nth-child(1)').should('be.visible').type('1',{timeout:5000});
     cy.get('.pincode-input-text:nth-child(2)').type('1');
     cy.get('.pincode-input-text:nth-child(3)').type('1');
     cy.get('.pincode-input-text:nth-child(4)').type('1');
@@ -21,8 +21,11 @@ function Login(name,password){
     cy.get('.pincode-input-text:nth-child(2)').type('1');
     cy.get('.pincode-input-text:nth-child(3)').type('1');
     cy.get('.pincode-input-text:nth-child(4)').type('1');
+    // .then(() => {
+    //     cy.document().should('exist');  // Wait for the document to exist
+    //   });  
     cy.wait(5000);
-    cy.get('.close-toastr').click();
+    cy.get('.close-toastr').click()
 }
 
 export{Login}
