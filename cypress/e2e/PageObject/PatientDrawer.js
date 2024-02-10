@@ -6,7 +6,7 @@ export class PatientDrawer {
 
     OpenPatientChannel(patient = 'Test Patient') {
         cy.get('.search-input > .ui > input').type(patient);
-        cy.get('.patient-info').click();
+        cy.get(':nth-child(6) > :nth-child(1) > .content').click();
         // send a message in the chat
         // cy.get("#messageInput").click();
 

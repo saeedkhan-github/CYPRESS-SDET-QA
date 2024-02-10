@@ -7,11 +7,22 @@ let uploading = new uploads;
 
 describe('Add and Remove Tags in a Singl File', () => {
     beforeEach(() => {
-      Login();
+      // Login();
+      cy.LoginWithSession('qa.test1','Saeed123@')
+      cy.visit('https://webapp.hucu.us/chat/locations/1050')
     });
+    after(() => {
+      // Clear cookies
+      cy.clearCookies();
+    
+      // Clear local storage
+      cy.clearLocalStorage();
+    });
+      
   
     it('Add Tags in a Single File',()=>{
       // Open patient channel 
+     
       patientdrawer.OpenPatientChannel('Tags Patient')
       cy.wait(2000);
       patientdrawer.PatientProfileClick();
@@ -37,13 +48,11 @@ describe('Add and Remove Tags in a Singl File', () => {
       cy.get('.tagChipContainer.tagChipContainerTouch').should('contain','All Tags');
       cy.get('.tagChipContainer.tagChipContainerTouch').should('contain','Payment');
       cy.get('.tagChipContainer.tagChipContainerTouch').should('contain','CT XRY');
-      
-
     })
    
 
     it('Romve tags from a Single file ',()=>{
-   
+      cy.visit('https://webapp.hucu.us')
       patientdrawer.OpenPatientChannel('Tags Patient')
       cy.wait(2000);
       patientdrawer.PatientProfileClick();
